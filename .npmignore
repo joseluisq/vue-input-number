@@ -1,0 +1,10 @@
+app
+dist
+*.js
+*.lock
+*.log
+*.yml
+.gitignore
+.npmignore
+tsconfig.json
+tslint.json
