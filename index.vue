@@ -14,7 +14,10 @@
         > <i class="v-input-number-icon"></i> </a>
     </div>
 
-    <input type="text" :maxlength="maxlength" autocomplete="off"
+    <input type="text" 
+      :maxlength="maxlength" 
+      autocomplete="off"
+      :placeholder="placeholder"
       class="v-input-number-input"
       v-model.number="quantity"
       @keyup="onKeyup($event)"
@@ -55,6 +58,10 @@ export default {
       type: Number,
       default: 4
     },
+    placeholder: {
+      type: String,
+      default: ''
+    }
   },
 
   data () {
