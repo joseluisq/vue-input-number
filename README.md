@@ -64,6 +64,10 @@ For more detailed example check out [the app directory](./app).
 - __min:__ Minimum value for input number.
 - __max:__ Maximum value for input number.
 - __maxlength:__ Maxlength for the input number.
+- __keydown:__ Enable keydown for increment or decrement value.
+- __mousedown:__ Enable mousedown for increment or decrement value.
+- __integer:__ Enable integer value only.
+- __placeholder:__ Set a input placeholder.
 
 ## Events
 
@@ -74,4 +78,4 @@ Event is fired when value is changed.
 ## License
 MIT license
 
-© 2017 [José Luis Quintana](https://git.io/joseluisq)
+© 2018 [José Luis Quintana](https://git.io/joseluisq)
