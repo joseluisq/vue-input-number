@@ -1,6 +1,6 @@
 {
   "name": "vue-input-number",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "description": "A custom input type number component for Vue",
   "repository": "joseluisq/vue-input-number",
