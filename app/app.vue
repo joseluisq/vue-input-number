@@ -17,6 +17,7 @@
         :min="options.min"
         :max="options.max"
         :maxlength="options.maxlength"
+        :placeholder="options.placeholder"
         @onInputNumberChange="inputChange"></input-number>
     </p>
 
@@ -42,7 +43,8 @@ export default class App extends Vue {
     step: 1,
     min: 1,
     max: 100,
-    maxlength: 3
+    maxlength: 3,
+    placeholder: ''
   }
 
   inputValue: number = 1
