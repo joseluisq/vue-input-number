@@ -34,7 +34,8 @@ interface Options {
   step: number,
   min: number,
   max: number,
-  maxlength: number
+  maxlength: number,
+  placeholder: String
 }
 
 @Component
@@ -44,7 +45,7 @@ export default class App extends Vue {
     min: 1,
     max: 100,
     maxlength: 3,
-    placeholder: ''
+    placeholder: 'Enter a number'
   }
 
   inputValue: number = 1
