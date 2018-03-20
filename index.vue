@@ -76,15 +76,19 @@ export default {
   },
 
   watch: {
+    placeholder: function () {
+      this.quantity = !this.placeholder ? this.min : null
+    },
     quantity: function () {
       this.evaluateQuantity()
     },
     min: function (val) {
-      if (this.quantity < val) this.quantity = val
+      if (this.quantity < val) {
+        this.quantity = val
+      }
     },
     max: function (val) {
-      if (this.quantity > val) this.quantity = val
-      else this.quantity = this.min
+      this.quantity = this.quantity > val ? val : this.min
     }
   },
 
@@ -99,23 +103,39 @@ export default {
 
     emitChange (init = false) {
       this.oldValue = this.quantity
-      if (init) this.quantity = this.min
+
+      if (init && !this.placeholder) {
+        this.quantity = this.min
+      }
+
       this.$emit('onInputNumberChange', this.quantity, init)
     },
 
     increment () {
-      this.quantity = this.quantity < this.max
-        ? this.quantity + this.step
-        : this.max
+      if (!this.quantity) {
+        this.quantity = this.min
+      } else {
+        this.quantity = this.quantity < this.max
+          ? this.quantity + this.step
+          : this.max
+      }
     },
 
     decrement () {
-      this.quantity = this.quantity > this.min
-        ? this.quantity - this.step
-        : this.min
+      if (!this.quantity) {
+        this.quantity = this.min
+      } else {
+        this.quantity = this.quantity > this.min
+          ? this.quantity - this.step
+          : this.min
+      }
     },
 
     onBlur () {
+      if (this.placeholder && !this.quantity) {
+        return
+      }
+
       if (this.quantity.toString().length === 0) {
         this.quantity = this.oldValue
         return
@@ -141,6 +161,7 @@ export default {
       if (this.isKeydown) return
 
       if (
+        !this.placeholder &&
         this.quantity.toString().length > 0 &&
         this.quantity !== this.oldValue
       ) {

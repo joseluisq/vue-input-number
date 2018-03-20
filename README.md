@@ -61,13 +61,13 @@ For more detailed example check out [the app directory](./app).
 ## Attributes
 
 - __step:__ Step value for increment and decrement the input number value.
-- __min:__ Minimum value for input number.
+- __min:__ Minimum value for input number. `min` is only used as a placeholder if `placeholder` is empty.
 - __max:__ Maximum value for input number.
 - __maxlength:__ Maxlength for the input number.
 - __keydown:__ Enable keydown for increment or decrement value.
 - __mousedown:__ Enable mousedown for increment or decrement value.
 - __integer:__ Enable integer value only.
-- __placeholder:__ Set a input placeholder.
+- __placeholder:__ Set a input placeholder. If `placeholder` has some value then `min` is not used as a placeholder.
 
 ## Events
 
