@@ -30,6 +30,10 @@
 <script>
 export default {
   props: {
+    value: {
+      type: Number,
+      default: 0
+    },
     min: {
       type: Number,
       default: 0
@@ -105,7 +109,7 @@ export default {
       this.oldValue = this.quantity
 
       if (init && !this.placeholder) {
-        this.quantity = this.min
+        this.quantity = (this.value < this.min) ? this.min : this.value
       }
 
       this.$emit('onInputNumberChange', this.quantity, init)
