@@ -29,6 +29,7 @@ npm install vue-input-number --save-dev
         :min="10"
         :max="100"
         :maxlength="3"
+        :inputclass="'v-input-number-input'"
         @onInputNumberChange="onChange"></input-number>
 
 </template>
@@ -68,6 +69,7 @@ For more detailed example check out [the app directory](./app).
 - __mousedown:__ Enable mousedown for increment or decrement value.
 - __integer:__ Enable integer value only.
 - __placeholder:__ Set a input placeholder. If `placeholder` has some value then `min` is not used as a placeholder.
+- __inputclass:__ Set a diferent class for the input element. For example, if you use Bootstrap default input class you can set `:inputclass="'form-control'"` to use `form-control` class in the input element.
 
 ## Events
 

@@ -18,7 +18,7 @@
       :maxlength="maxlength" 
       autocomplete="off"
       :placeholder="placeholder"
-      class="v-input-number-input"
+      :class="inputclass"
       v-model.number="quantity"
       @keyup="onKeyup($event)"
       @keydown="onKeydown($event)"
@@ -65,6 +65,10 @@ export default {
     placeholder: {
       type: String,
       default: ''
+    },
+    inputclass: {
+      type: String,
+      default: 'v-input-number-input'
     }
   },
 
