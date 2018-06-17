@@ -61,6 +61,7 @@ For more detailed example check out [the app directory](./app).
 
 ## Attributes
 
+- __value:__ Add a default value to input. 
 - __step:__ Step value for increment and decrement the input number value.
 - __min:__ Minimum value for input number. `min` is only used as a placeholder if `placeholder` is empty.
 - __max:__ Maximum value for input number.
