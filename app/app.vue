@@ -19,6 +19,7 @@
         :maxlength="options.maxlength"
         :placeholder="options.placeholder"
         :class="options.inputclass"
+        :disabled="options.disabled"
         @onInputNumberChange="inputChange"></input-number>
     </p>
 
@@ -37,7 +38,8 @@ interface Options {
   max: number,
   maxlength: number,
   placeholder: String,
-  inputclass: String
+  inputclass: String,
+  disabled: Boolean
 }
 
 @Component
@@ -48,7 +50,8 @@ export default class App extends Vue {
     max: 100,
     maxlength: 3,
     placeholder: 'Enter a number',
-    inputclass: 'v-input-number-input'
+    inputclass: 'v-input-number-input',
+    disabled: false
   }
 
   inputValue: number = 1
